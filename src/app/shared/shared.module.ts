@@ -11,6 +11,10 @@ import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { SharedModule as NgPrimeSharedModule } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [],
@@ -27,6 +31,10 @@ import { InputTextModule } from 'primeng/inputtext';
     NgPrimeSharedModule,
     TableModule,
     InputTextModule,
+    MultiSelectModule,
+    DropdownModule,
+    ButtonModule,
+    CardModule,
   ],
   exports: [
     ToastModule,
@@ -36,6 +44,10 @@ import { InputTextModule } from 'primeng/inputtext';
     ReactiveFormsModule,
     InputNumberModule,
     InputTextModule,
+    MultiSelectModule,
+    DropdownModule,
+    ButtonModule,
+    CardModule,
   ],
 })
 export class SharedModule {
