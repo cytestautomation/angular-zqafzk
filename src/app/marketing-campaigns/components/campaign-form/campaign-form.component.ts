@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CustomValidators } from '../../../shared/validators/CustomValidators';
+import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-campaign-form.component',
@@ -16,6 +17,12 @@ import { CustomValidators } from '../../../shared/validators/CustomValidators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CampaignFormComponent implements OnInit {
+  public products: SelectItem[] = [
+    { label: 'Product A', value: 'Product A' },
+    { label: 'Product A', value: 'Product B' },
+    { label: 'Product A', value: 'Product C' },
+    { label: 'Product A', value: 'Product D' },
+  ];
   public campaignForm = new FormGroup({
     campaignName: new FormControl('', [
       Validators.required,
@@ -25,8 +32,8 @@ export class CampaignFormComponent implements OnInit {
       Validators.required,
       this.isEampFormatCorrect,
     ]),
-    startDate: new FormControl(''),
-    endDate: new FormControl(''),
+    startDate: new FormControl('', [Validators.required]),
+    endDate: new FormControl('', [Validators.required]),
     productLine: new FormControl(''),
   });
 
@@ -40,4 +47,6 @@ export class CampaignFormComponent implements OnInit {
     const isValid = !isWhitespace;
     return isValid ? null : { whitespace: true };
   }
+
+  public addCampaign() {}
 }

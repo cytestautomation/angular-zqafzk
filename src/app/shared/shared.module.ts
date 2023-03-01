@@ -15,6 +15,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [],
@@ -35,6 +36,7 @@ import { CardModule } from 'primeng/card';
     DropdownModule,
     ButtonModule,
     CardModule,
+    CalendarModule,
   ],
   exports: [
     ToastModule,
@@ -48,6 +50,7 @@ import { CardModule } from 'primeng/card';
     DropdownModule,
     ButtonModule,
     CardModule,
+    CalendarModule,
   ],
 })
 export class SharedModule {

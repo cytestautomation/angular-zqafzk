@@ -1,28 +1,75 @@
-<div body class="flex-1 flex flex-column">
-  <form [formGroup]="campaignForm" class="flex flex-column row-gap-6">
-    <div class="flex gap-8">
-      <div class="flex-grow-0 w-1">
-        <h4>
-          {{ 'CAMPAIGN_FORM.HEADER' | translate }}
-        </h4>
-      </div>
-      <div class="w-2">
-        <div class="field">
-          <label for="campaignName" class="block">Campaign name</label>
-          <input
-            type="text"
-            pInputText
-            placeholder="Name"
-            formControlName="campaignName"
-          />
+<p-card class="flex justify-content-center">
+  <div class="flex-1 flex flex-column">
+    <form
+      [formGroup]="campaignForm"
+      class="flex flex-column row-gap-6"
+      (ngSubmit)="addCampaign()"
+    >
+      <div class="flex gap-8">
+        <div class="flex-grow-0 w-1">
+          <h4>
+            {{ 'CAMPAIGN_FORM.HEADER' | translate }}
+          </h4>
+        </div>
+        <div class="w-2">
+          <div class="field">
+            <label for="campaignName" class="block">{{
+              'CAMPAIGN_FORM.FIELDS.NAME' | translate
+            }}</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="Name"
+              formControlName="campaignName"
+            />
+          </div>
+          <div class="field">
+            <label for="eampId" class="block">{{
+              'CAMPAIGN_FORM.FIELDS.EAMP' | translate
+            }}</label>
+            <input
+              type="text"
+              pInputText
+              placeholder="EAMP"
+              formControlName="eampId"
+            />
+          </div>
+          <div>
+            <label for="startDate">{{
+              'CAMPAIGN_FORM.FIELDS.START_DATE' | translate
+            }}</label>
+            <p-calendar
+              [showIcon]="true"
+              formControlName="startDate"
+            ></p-calendar>
+          </div>
+          <div>
+            <label for="endDate">{{
+              'CAMPAIGN_FORM.FIELDS.END_DATE' | translate
+            }}</label>
+            <p-calendar
+              [showIcon]="true"
+              formControlName="endDate"
+            ></p-calendar>
+          </div>
+          <div>
+            <label for="productLine">{{
+              'CAMPAIGN_FORM.FIELDS.PRODUCT' | translate
+            }}</label>
+            <p-dropdown
+              [options]="products"
+              optionLabel="Product"
+              formControlName="productLine"
+            ></p-dropdown>
+          </div>
         </div>
       </div>
-    </div>
-    <button
-      pButton
-      type="submit"
-      label="Submit"
-      [disabled]="campaignForm.invalid"
-    ></button>
-  </form>
-</div>
+      <button
+        pButton
+        type="submit"
+        label="Submit"
+        [disabled]="campaignForm.invalid"
+      ></button>
+    </form>
+  </div>
+</p-card>
