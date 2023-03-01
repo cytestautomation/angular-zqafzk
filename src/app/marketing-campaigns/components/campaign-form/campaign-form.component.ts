@@ -19,9 +19,9 @@ import { SelectItem } from 'primeng/api';
 export class CampaignFormComponent implements OnInit {
   public products: SelectItem[] = [
     { label: 'Product A', value: 'Product A' },
-    { label: 'Product A', value: 'Product B' },
-    { label: 'Product A', value: 'Product C' },
-    { label: 'Product A', value: 'Product D' },
+    { label: 'Product B', value: 'Product B' },
+    { label: 'Product C', value: 'Product C' },
+    { label: 'Product D', value: 'Product D' },
   ];
 
   public campaignForm = new FormGroup({
@@ -37,7 +37,7 @@ export class CampaignFormComponent implements OnInit {
     ]),
     startDate: new FormControl('', [Validators.required]),
     endDate: new FormControl('', [Validators.required]),
-    productLine: new FormControl(''),
+    productLine: new FormControl('', [Validators.required]),
   });
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
