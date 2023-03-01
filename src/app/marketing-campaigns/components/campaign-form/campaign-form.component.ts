@@ -23,14 +23,17 @@ export class CampaignFormComponent implements OnInit {
     { label: 'Product A', value: 'Product C' },
     { label: 'Product A', value: 'Product D' },
   ];
+
   public campaignForm = new FormGroup({
     campaignName: new FormControl('', [
       Validators.required,
       CustomValidators.isNotWhiteSpace,
+      Validators.minLength(1),
+      Validators.maxLength(15),
     ]),
     eampId: new FormControl('', [
       Validators.required,
-      this.isEampFormatCorrect,
+      Validators.pattern(/^[A-Z]{3}\/\d{5}\/(0[1-9]|1[0-2])\/\d{2}$/gm),
     ]),
     startDate: new FormControl('', [Validators.required]),
     endDate: new FormControl('', [Validators.required]),
@@ -39,14 +42,6 @@ export class CampaignFormComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
   public ngOnInit(): void {}
-
-  private isEampFormatCorrect(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const isWhitespace = (control.value || '').trim().length === 0;
-    const isValid = !isWhitespace;
-    return isValid ? null : { whitespace: true };
-  }
 
   public addCampaign() {}
 }
