@@ -27,6 +27,7 @@ export class CampaignFormComponent implements OnInit {
     ]),
     startDate: new FormControl(''),
     endDate: new FormControl(''),
+    productLine: new FormControl(''),
   });
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
