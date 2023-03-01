@@ -1,0 +1,22 @@
+<div body class="flex-1 flex flex-column">
+  <form [formGroup]="campaignForm" class="flex flex-column row-gap-6">
+    <div class="flex gap-8">
+      <div class="flex-grow-0 w-1">
+        <h4>
+          {{ 'CAMPAIGN_FORM.HEADER' | translate }}
+        </h4>
+      </div>
+      <div class="w-2">
+        <div class="field">
+          <label for="campaignName" class="block">Campaign name</label>
+          <input
+            type="text"
+            pInputText
+            placeholder="Name"
+            formControlName="campaignName"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

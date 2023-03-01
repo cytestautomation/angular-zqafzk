@@ -10,6 +10,7 @@ import { ToastModule } from 'primeng/toast';
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { SharedModule as NgPrimeSharedModule } from 'primeng/api';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { SharedModule as NgPrimeSharedModule } from 'primeng/api';
     InputNumberModule,
     NgPrimeSharedModule,
     TableModule,
+    InputTextModule,
   ],
   exports: [
     ToastModule,
@@ -33,6 +35,7 @@ import { SharedModule as NgPrimeSharedModule } from 'primeng/api';
     DialogModule,
     ReactiveFormsModule,
     InputNumberModule,
+    InputTextModule,
   ],
 })
 export class SharedModule {
